@@ -1,4 +1,9 @@
-<div dir="rtl" lang="ar" style="text-align: right;">
+<style>
+  body {
+    direction: rtl;
+    text-align: right;
+  }
+</style>
 
 # الدعم الفني لتطبيق "عليم"
 
@@ -19,5 +24,3 @@
 * **وصف المشكلة:** شرح مبسط لما حدث، وإرفاق لقطة شاشة (Screenshot) إن وُجدت.
 
 شكراً لاستخدامك تطبيق "عليم"، ونتمنى لك تجربة ممتعة!
-
-</div>
