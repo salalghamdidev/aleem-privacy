@@ -1,0 +1,319 @@
+/* ============================================
+ * styles.css
+ * Modern Flat UI Theme System - Aleem Website
+ * ============================================ */
+
+/* --- 📋 CSS VARIABLES (Extracted from Flutter Theme) --- */
+:root {
+    /* Core Palette */
+    --primary: #0041FF;
+    /* Navy Blue */
+    --secondary: #0077FF;
+    /* Royal Blue */
+    --background: #F8F9FA;
+    /* Off-White */
+    --error: #DC3545;
+    /* Flat Red */
+    --success: #28A745;
+    /* Green */
+
+    /* Semantic Colors */
+    --surface: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #666666;
+    --white: #FFFFFF;
+    --black: #0D1B2A;
+
+    /* Design Tokens - Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 32px;
+    --radius-bubble: 24px;
+    --radius-pill: 100px;
+}
+
+/* --- 🌐 RESET & TYPOGRAPHY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* --- 🏗️ LAYOUT & STRUCTURE --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- 🌟 HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, var(--background) 0%, #FFFFFF 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: slideUp 0.8s ease-out;
+}
+
+.app-icon {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    background: linear-gradient(135deg, var(--primary), #143CC8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+/* --- 🕹️ CALL TO ACTION (CTA) BUTTONS --- */
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    min-width: 200px;
+}
+
+.store-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.store-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(13, 27, 42, 0.2);
+}
+
+.store-btn.disabled,
+.store-btn[disabled] {
+    opacity: 0.8;
+    cursor: wait;
+}
+
+/* --- ✨ FEATURES SECTION --- */
+.features {
+    padding: 6rem 0;
+    background-color: #FFFFFF;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Glass Badge Cards (Matching AppDecorations.bubbleGlass) */
+.feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(0, 0, 0, 0.05);
+    /* Soft border instead of white for better contrast on white bg */
+    border-radius: var(--radius-bubble);
+    padding: 2.5rem 2rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Soft shadow mimicking AppShadows.bubble */
+    box-shadow: 0 8px 20px rgba(13, 27, 42, 0.08), 0 4px 40px rgba(0, 65, 255, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(13, 27, 42, 0.1), 0 8px 40px rgba(0, 65, 255, 0.05);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(0, 65, 255, 0.1), rgba(0, 119, 255, 0.1));
+    color: var(--primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* --- 📝 TOAST NOTIFICATION --- */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.toast {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 🦶 FOOTER --- */
+footer {
+    padding: 4rem 2rem 2rem 2rem;
+    background-color: var(--background);
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* --- 📱 RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .store-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* --- 🎬 KEYFRAMES --- */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
