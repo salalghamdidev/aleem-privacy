@@ -5,31 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 2. Play Store "Coming Soon" Toast Logic
-    const playStoreBtn = document.getElementById('play-store-btn');
-    const toast = document.getElementById('coming-soon-toast');
-    let toastTimeout;
-
-    if (playStoreBtn && toast) {
-        playStoreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            // Show toast
-            toast.classList.add('show');
-
-            // Clear existing timeout if multiple clicks happen
-            if (toastTimeout) {
-                clearTimeout(toastTimeout);
-            }
-
-            // Hide toast after 3 seconds
-            toastTimeout = setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        });
-    }
-
-    // 3. Simple Intersection Observer for scroll animations (fade in feature cards)
+    // 2. Simple Intersection Observer for scroll animations (fade in feature cards)
     const observerOptions = {
         root: null,
         rootMargin: '0px',
