@@ -1,45 +1,49 @@
 /* ============================================
  * styles.css
- * Modern Flat UI Theme System - Aleem Website
+ * Festive Night Design System - Aleem Website
  * ============================================ */
 
 /* --- 📋 CSS VARIABLES (Extracted from Flutter Theme) --- */
 :root {
-    /* Core Palette */
-    --primary: #0041FF;
-    /* Navy Blue */
-    --primary-dark: #0020A3;
-    /* Darker shade for gradient */
-    --accent: #3ad8ff;
-    /* Bright cyan for contrast */
-    --secondary: #0077FF;
-    /* Royal Blue */
+    /* Core Palette — AppColors */
+    --primary: #003BE6;
+    /* bg900 — anchor dark */
+    --primary-dark: #0E48E6;
+    /* bg800 — scaffold bottom */
+    --accent: #FFFFFF;
+    /* coral500 = white */
+    --secondary: #3F74E6;
+    /* surfaceHi */
     --background: var(--primary);
-    /* Deep Blue Background */
-    --error: #DC3545;
-    /* Flat Red */
+    --error: #F95738;
     --success: #28A745;
-    /* Green */
 
-    /* Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-hover: rgba(255, 255, 255, 0.12);
+    /* Surface tokens */
+    --surface: #215BE6;
+    /* AppColors.surface — primary card */
+    --surface-hi: #3F74E6;
+    /* AppColors.surfaceHi — elevated */
+    --cream: #FFF8E7;
+    /* AppColors.cream — primary text */
+    --muted: #ABC4DE;
+    /* AppColors.muted — secondary text */
+
+    /* Borders */
     --glass-border: rgba(255, 255, 255, 0.2);
     --glass-border-light: rgba(255, 255, 255, 0.4);
 
     /* Semantic Colors */
-    --surface: #FFFFFF;
-    --text-primary: #FFFFFF;
-    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-primary: #FFF8E7;
+    --text-secondary: #ABC4DE;
     --white: #FFFFFF;
-    --black: #0D1B2A;
+    --black: #020B18;
 
-    /* Design Tokens - Radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 18px;
+    /* Design Tokens - Radius (AppRadius) */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
     --radius-xl: 32px;
-    --radius-bubble: 24px;
+    --radius-bubble: 20px;
     --radius-pill: 100px;
 }
 
@@ -52,7 +56,7 @@
 }
 
 body {
-    background: radial-gradient(circle at top right, var(--primary), var(--primary-dark));
+    background: linear-gradient(to bottom, #0042FF 0%, #5684E9 55%, #8AAAEA 100%);
     background-attachment: fixed;
     background-color: var(--primary);
     color: var(--text-primary);
@@ -126,7 +130,7 @@ p {
 
 .hero h1 span {
     color: var(--accent);
-    text-shadow: 0 0 20px rgba(13, 229, 255, 0.3);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 /* --- 🕹️ CALL TO ACTION (CTA) BUTTONS --- */
@@ -168,12 +172,6 @@ p {
     background-color: #f8f9fa;
 }
 
-.store-btn.disabled,
-.store-btn[disabled] {
-    opacity: 0.8;
-    cursor: wait;
-}
-
 /* --- ✨ FEATURES SECTION --- */
 .features {
     padding: 6rem 0;
@@ -192,43 +190,38 @@ p {
     gap: 2rem;
 }
 
-/* Glass Badge Cards (Matching AppDecorations.bubbleGlass) */
+/* Solid Cards (Matching AppDecorations.solidCard) */
 .feature-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--glass-border);
-    border-top: 1px solid var(--glass-border-light);
-    border-left: 1px solid var(--glass-border-light);
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: var(--radius-bubble);
     padding: 2.5rem 2rem;
     text-align: left;
-    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, background 0.3s ease;
-    /* Soft shadow mimicking AppShadows.bubble */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), inset 0 2px 5px rgba(255, 255, 255, 0.05);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s ease;
+    box-shadow: 0 15px 35px rgba(2, 11, 24, 0.30), 0 4px 40px rgba(2, 11, 24, 0.12);
     position: relative;
     overflow: hidden;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    background: var(--glass-hover);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2), inset 0 2px 5px rgba(255, 255, 255, 0.1);
-    border-color: var(--glass-border-light);
+    background: var(--surface-hi);
+    box-shadow: 0 20px 45px rgba(2, 11, 24, 0.35), 0 4px 50px rgba(2, 11, 24, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .feature-icon {
     width: 64px;
     height: 64px;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--surface-hi);
     color: var(--white);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(2, 11, 24, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .feature-icon svg {
@@ -244,32 +237,6 @@ p {
 .feature-card p {
     font-size: 1rem;
     margin-bottom: 0;
-}
-
-/* --- 📝 TOAST NOTIFICATION --- */
-.toast-container {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-}
-
-.toast {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: var(--primary-dark);
-    padding: 14px 28px;
-    border-radius: var(--radius-pill);
-    font-weight: 600;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.toast.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* --- 🦶 FOOTER --- */
@@ -295,7 +262,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .copyright {
